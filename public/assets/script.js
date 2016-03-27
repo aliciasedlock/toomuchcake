@@ -75,7 +75,7 @@ $(function() {
 		var minY = parseInt(window.getComputedStyle(header).height);
 
 		for (var i = 0; i < totalCake; i++) {
-			var number = parseInt(Math.random() * (5 - 1) + 1); // used to grab random cake image
+			var number = parseInt(Math.random() * (9) + 1); // used to grab random cake image
 			var xPos = parseInt(Math.random() * maxX);
 			var yPos = parseInt(Math.random() * (maxY - minY) + minY);
 			var element = new Image();
