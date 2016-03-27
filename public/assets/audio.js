@@ -1,8 +1,9 @@
 function AudioInterface() {
+	this.context = new AudioContext();
 }
 
 AudioInterface.prototype.initAudio = function(url, loop) {
-	var context = new AudioContext();
+	var context = this.context;
 	var request = this.setUpRequest(url);
 	var audio = this;
 	var buff;
