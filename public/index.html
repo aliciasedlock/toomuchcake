@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/font/fonts.css">
+		<title>Grandma Made Too Much Cake</title>
+	</head>
+
+	<body>
+
+		<!-- Intro Screen -->
+		<div id="intro">
+			<h1>Grandma Made Too Much Cake</h1>
+			<div class="doily-container">
+				<div>
+					<p>Oh no! Grandma keeps getting too excited and makes way too much cake! Now they keep falling on her.</p>
+					<p>Drag the cake out of the way and save grandma! If you're not fast enough, she'll die. No pressure.</p>
+					<button id="startGame">Save grandma!</button>
+				</div>
+			</div>
+		</div>
+		<!-- End Intro Screen -->
+
+		<!-- Victory Screen -->
+		<div id="victoryScreen" class="status-screen">
+			<h1>You saved grandma!</h1>
+			<div class="doily-container">
+				<div>
+					<p>You're the new favorite grandkid!</p>
+					<button id="generateLevel">Next level</button>
+				</div>
+			</div>
+		</div>
+		<!-- End Victory Screen -->
+
+		<!-- Defeat Screen -->
+		<div id="defeatScreen" class="status-screen">
+			<h1>Oh no! Grandma died.</h1>
+			<div class="instructions doily-container">
+				<div>
+					<p>So much for that inheritance.</p>
+					<button id="newGame">Try again?</button>
+					<button id="goHome">Give up</button>
+				</div>
+			</div>
+		</div>
+		<!-- End Defeat Screen -->
+
+		<div id="gameArea" class="hidden">
+			<div id="stats">
+				<div>Timer: <span id="timer"></span></div>
+				<div>Level: <span id="level"></span></div>
+			</div>
+			<img id="grandma" class="secret" src="images/grandma.png" />
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="assets/jquery-ui.js"></script>
+		<script type="text/javascript" src="assets/hittest.js"></script>
+		<script type="text/javascript" src="assets/script.js"></script>
+
+		<link rel="prefetch" href="imaes/cake/1.png">
+		<link rel="prefetch" href="images/cake/2.png">
+		<link rel="prefetch" href="images/cake/3.png">
+		<link rel="prefetch" href="images/cake/4.png">
+		<link rel="prefetch" href="images/grandma.png">
+	</body>
+
+</html>

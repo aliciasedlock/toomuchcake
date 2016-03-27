@@ -1,0 +1,107 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'Goudy Bookletter', 'Arial';
+	background-image: url(../images/wallpaper.jpg);
+}
+
+h1 {
+	font-family: 'Sweet Lady';
+	font-size: 8em;
+	padding: .25em;
+	margin: 0;
+	background: pink;
+	color: blanchedalmond;
+	text-shadow: 1px 1px 1px goldenrod;
+}
+
+button {
+	font-family: 'Sweet Lady';
+	margin: 0;
+	font-size: 2em;
+	padding: 10px;
+	font-weight: bold;
+	background: rgb(211, 76, 122);
+	border: 2px solid goldenrod;
+	border-radius: 25px;
+	color: blanchedalmond;
+	text-shadow: 1px 1px 1px goldenrod;
+}
+
+.hidden {
+	display: none;
+}
+
+.secret {
+	opacity: 0;
+}
+
+#intro {
+	text-align: center;
+}
+
+.doily-container {
+	background-image: url(../images/doiley.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 25px;
+}
+
+.doily-container div {
+	width: 30%;
+}
+
+#gameArea {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.cake, #grandma {
+	background-size: contain;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center center;
+	z-index: 1;
+}
+
+#grandma {
+	width: 131px;
+	height: 200px;
+}
+
+#stats {
+	width: 100vw;
+	height: 5vh;
+	background: white;
+	display: flex;
+	padding: 5px 15px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.status-screen {
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
+	z-index: -1;
+	display: none;
+}
+
+.status-screen.show {
+	opacity: 1;
+	z-index: 1;
+	display: block;
+}
