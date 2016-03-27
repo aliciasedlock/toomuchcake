@@ -77,7 +77,7 @@ $(function() {
 		var header = document.getElementById('stats');
 		var cakeCountWidth = Math.round(this.width / this.cakeWidth);
 		var cakeCountWHeight = Math.round(this.height / this.cakeHeight);
-		var totalCake = ((cakeCountWHeight * cakeCountWHeight) * this.level) * 2;
+		var totalCake = ((cakeCountWHeight * cakeCountWHeight) * this.level);
 		var maxX = this.width - this.cakeWidth;
 		var maxY = this.height - this.cakeHeight;
 		var minY = parseInt(window.getComputedStyle(header).height);
