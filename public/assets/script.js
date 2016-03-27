@@ -14,6 +14,7 @@ $(function() {
 		this.isGrandmaClear;
 		this.cakeWidth;
 		this.cakeHeight;
+		this.audio = new AudioInterface();
 	}
 
 	/*
@@ -58,8 +59,15 @@ $(function() {
 				document.getElementById('defeatScreen').classList.add('show');
 				document.getElementById('gameArea').classList.add('hidden');
 				clearInterval(game.timer);
+				game.audio.initAudio('assets/audio/ded.mp3', false);
 			}
 		}, 1000);
+
+		if (Math.round(Math.random())) {
+			game.audio.initAudio('assets/audio/ohno.mp3', false);
+		} else {
+			game.audio.initAudio('assets/audio/helpme.mp3', false);
+		}
 	}
 
 	/*
@@ -122,6 +130,7 @@ $(function() {
 			document.getElementById('victoryScreen').classList.add('show');
 			document.getElementById('gameArea').classList.add('hidden');
 			clearInterval(this.timer);
+			game.audio.initAudio('assets/audio/thankgoodness.mp3', false);
 		}
 	}
 
@@ -147,6 +156,7 @@ $(function() {
 	*/
 	var game = new Game();
 	game.grandmaHitTest = new HitTest(game.grandma);
+	game.audio.initAudio('assets/audio/lolmusic.mp3', true);
 
 	document.getElementById('startGame').addEventListener('click', game.startGame.bind(game), false);
 	document.getElementById('newGame').addEventListener('click', game.startGame.bind(game), false);

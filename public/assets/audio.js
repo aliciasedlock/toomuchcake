@@ -1,24 +1,31 @@
-window.onload = function () {
+function AudioInterface() {
+}
 
-	var introContext = new AudioContext();
-	var introRequest = setUpRequest("assets/lolmusic.mp3");
+AudioInterface.prototype.initAudio = function(url, loop) {
+	var context = new AudioContext();
+	var request = this.setUpRequest(url);
+	var audio = this;
+	var buff;
 
-	introRequest.onload = function() {
-		introContext.decodeAudioData(introRequest.response, function(buffer) {
-			introBuffer = buffer;
+	this.loop = loop;
+
+	request.onload = function() {
+		
+		context.decodeAudioData(request.response, function(buffer) {
+			buff = buffer;
 		}, function () {
 			console.log("ruh-roh, trouble gettin audio")
 		});
 	}
 
-	introRequest.send();
+	request.send();
 
 	window.setTimeout(function () {
-		playAudio(introBuffer, introContext);
+		audio.playAudio(buff, context);
 	}, 500);
-}
+};
 
-function setUpRequest (url, context, sourceBuffer) {
+AudioInterface.prototype.setUpRequest = function(url, context, sourceBuffer) {
 	var request = new XMLHttpRequest();
 	request.open('GET', url, true);
 	request.responseType = 'arraybuffer';
@@ -26,10 +33,10 @@ function setUpRequest (url, context, sourceBuffer) {
 	return request;
 }
 
-function playAudio (buffer, context) {
+AudioInterface.prototype.playAudio = function(buffer, context) {
 	currentAudio = context.createBufferSource();
 	currentAudio.buffer = buffer;
-	currentAudio.loop = true;
+	currentAudio.loop = this.loop;
 	currentAudio.connect(context.destination);
 	currentAudio.start(0); 
 }
